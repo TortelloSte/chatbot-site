@@ -1,27 +1,16 @@
 import os
 import sqlite3
+from datetime import datetime
 from doctorSte.database import *
  
-def creare_database_se_non_esiste(nome_database):
-    if not os.path.exists(nome_database):
-        conn = sqlite3.connect(nome_database)
-        conn.execute('''CREATE TABLE preventivi (email TEXT)''')
-        conn.close()
- 
-def inserire_dati_preventivo(email):
-    conn = sqlite3.connect('preventivi.db')
-    c = conn.cursor()
-    c.execute("INSERT INTO preventivi (email) VALUES (?)", (email,))
-    conn.commit()
-    conn.close()
- 
-def inserire_dati_consiglio(nome, cognome, email, oggetto, messaggio):
-    conn = sqlite3.connect('consigli.db')
-    c = conn.cursor()
-    c.execute("INSERT INTO consigli (nome, cognome, email, oggetto, messaggio) VALUES (?, ?, ?, ?, ?)", (nome, cognome, email, oggetto, messaggio))
-    conn.commit()
-    conn.close()
- 
+def check_data(data):
+    try: 
+        dataValore = datetime.strptime(data,'%d/%m/%Y')
+        return True
+    except ValueError:
+        return False
+
+
 def fare_domanda(domanda, opzioni):
     print(domanda)
     for i, opzione in enumerate(opzioni, 1):
@@ -36,6 +25,9 @@ def fare_domanda(domanda, opzioni):
                     ricevere_consiglio()
                 elif domanda=="Quando hai bisogno del servizio?" and scelta == 1:
                     data = input("Inserisci una data nel formato gg/mm/aaaa: ")
+                    while not check_data(data):
+                        print("Data non valida")
+                        data = input("Inserisci una data nel formato gg/mm/aaaa: ")
                 return opzioni[scelta - 1]
             else:
                 print("Inserisci un numero valido.")
@@ -77,10 +69,7 @@ def ricevere_consiglio():
     inserire_dati_consiglio(nome, cognome, email, oggetto, messaggio)
     print("Grazie per aver condiviso il tuo problema. Ti contatteremo presto con un consiglio.")
  
-# Verifica e creazione del database preventivi.db
 creare_database_se_non_esiste('preventivi.db')
- 
-# Inizio del flusso del programma
 risposta_iniziale = fare_domanda("Vuoi fare un preventivo?", ["Si", "No", "Ho bisogno di un consiglio"])
  
 if risposta_iniziale == "Si":
@@ -92,3 +81,6 @@ elif risposta_iniziale == "No":
     print("Grazie per aver fornito le informazioni. Ti contatteremo presto.")
 else:
     ricevere_consiglio()
+
+# una volta che queste funzionano implemantare le funzioni che gestiscono la creazione del pdf e il file csv
+# il file csv si trova dentro alla cartella doctorSte, che fa da libreria quindi se si importa la libreria viene di default preso
