@@ -7,7 +7,17 @@ https://prontopro.it/quote/installazione-porta-blindata/112655/2
 
 
 # task:
-- modifica delle funzioni per ottimizzare il database che si crea -ste
-- modifica delle funzioni per lavorare al chatbot -ale
+- modifica delle funzioni per ottimizzare il database che si crea
+- modifica delle funzioni per lavorare al chatbot
 - inserimento file csv per calcolo matematico del preventivo 
-- utput file pdf
+- OUTPUT file pdf
+
+# modifica delle funzioni per ottimizzare il codice
+- aggiunta delle funzioni per andare a crere un file pdf
+- modifica delle funzioni per andare a creare un csv
+
+ ottimizzazione all'interno della libreria creata per il progetto
+ per installarla bisogna:
+    cd 'entrare nel path della cartella'
+    pip install .
+    
