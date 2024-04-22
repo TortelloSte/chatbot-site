@@ -1,0 +1,5 @@
+setup.py
+doctorSte.egg-info/PKG-INFO
+doctorSte.egg-info/SOURCES.txt
+doctorSte.egg-info/dependency_links.txt
+doctorSte.egg-info/top_level.txt
