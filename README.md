@@ -29,8 +29,8 @@ Tuttavia, l'obiettivo è di andare oltre tale modello, arricchendolo con funzion
 
 
 
-
-# entro mercoledi sera terminare le modifiche a questo codice, per renderlo funzionante, con database, registrazione utente, modifica delle funzioni e creazione della libreria completa
+# --------------------------------
+entro mercoledi sera terminare le modifiche a questo codice, per renderlo funzionante, con database, registrazione utente, modifica delle funzioni e creazione della libreria completa
 
 - modifica delle funzioni per renderle ottimizzate, creare l'api per renderlo accessibile online
 - fare i test e inserire il file dei test all'interno della repository!
