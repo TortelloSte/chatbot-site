@@ -1,23 +1,38 @@
 # chatbot-site
 
+## Chatbot per Generazione di Preventivi
 
-repo che serve per lo sviluppo del sito web con la presenza di un chatbot custom per il calcolo dei preventivi
+Questo repository è dedicato alla definizione dell'ambiente di controllo e creazione del nostro chatbot predefinito, progettato per la generazione e il calcolo dei preventivi.
 
-https://prontopro.it/quote/installazione-porta-blindata/112655/2
+L'ispirazione per questo progetto nasce dall'osservazione di come viene utilizzato un chatbot con risposte predefinite su questo [Link](https://prontopro.it/quote/installazione-porta-blindata/112655/2)
+Tuttavia, l'obiettivo è di andare oltre tale modello, arricchendolo con funzionalità avanzate come la generazione automatica di preventivi in formato PDF.
 
 
-# task:
-- modifica delle funzioni per ottimizzare il database che si crea
-- modifica delle funzioni per lavorare al chatbot
-- inserimento file csv per calcolo matematico del preventivo 
-- OUTPUT file pdf
+### TODO:
 
-# modifica delle funzioni per ottimizzare il codice
-- aggiunta delle funzioni per andare a crere un file pdf
-- modifica delle funzioni per andare a creare un csv
+   1. creazione di una libreria strutturata ad hoc per andare a definire tutto il progetto
+   2. creazione della API per questo progetto cosi da riuscire a sfruttarlo dentro a un sito web
+   3. creazione di un sito web per questo progetto
+   4. creazione del database per riuscire a inserire i dati
 
- ottimizzazione all'interno della libreria creata per il progetto
- per installarla bisogna:
-    cd 'entrare nel path della cartella'
-    pip install .
-    
+## come utilizzare questo codice:
+   - installare la libreria doctorSte per utilizzare le funzioni
+   - spostarsi dentro alla cartella doctorSte
+```bash
+      cd ./doctorSte/
+```
+   - installare la libreria doctorSte
+   
+```bash
+      pip install .
+```
+
+
+
+
+# entro mercoledi sera terminare le modifiche a questo codice, per renderlo funzionante, con database, registrazione utente, modifica delle funzioni e creazione della libreria completa
+
+- modifica delle funzioni per renderle ottimizzate, creare l'api per renderlo accessibile online
+- fare i test e inserire il file dei test all'interno della repository!
+
+(sarebbe interessante usare helm e le kubernetes per andare a strutturare un POD che possieda al suo interno tutto questo)
