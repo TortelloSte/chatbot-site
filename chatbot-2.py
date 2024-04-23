@@ -1,17 +1,4 @@
-import os
-import sqlite3
-from datetime import datetime
-from doctorSte.database import *
-
-def check_data(data):
-    try: 
-        dataValore = datetime.strptime(data,'%d/%m/%Y')
-        return True
-    except ValueError:
-        return False
-# questa funzione è corretta, controllare se è possibile sistemarla? -> inoltre dataValore non viene usato una volta che è stato creato come variabile
-
-
+from doctorSte.utils import *
 
 def fare_domanda(domanda, opzioni):
     print(domanda)
@@ -85,7 +72,7 @@ def ricevere_consiglio():
     print("Grazie per aver condiviso il tuo problema. Ti contatteremo presto con un consiglio.")
  
 if __name__ == "__main__":
-    # Verifica e creazione del database preventivi.db
+    # Verifica e creazione del database preventivi.db 
     creare_database_se_non_esiste('preventivi.db')
     
     # Inizio del flusso del programma

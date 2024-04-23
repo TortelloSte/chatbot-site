@@ -1,5 +1,6 @@
 import sqlite3
 import os
+from datetime import datetime
 
 def creare_database_se_non_esiste(nome_database):
     """
@@ -79,3 +80,13 @@ def creare_tabella_consiglio(nome_database):
         print(f"Tabella 'consigli' creata con successo nel database '{nome_database}'.")
     except sqlite3.Error as e:
         print(f"Errore durante la creazione della tabella: {e}")
+
+def check_data(data):
+    if not data:
+        return False
+    
+    try: 
+        datetime.strptime(data,'%d/%m/%Y')
+        return True
+    except ValueError:
+        return False

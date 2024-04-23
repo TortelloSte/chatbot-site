@@ -1,7 +1,7 @@
 import os
 import sqlite3
 from datetime import datetime
-from doctorSte.database import *
+from doctorSte.utils import *
  
 def check_data(data):
     try: 
